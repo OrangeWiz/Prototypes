@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
+<html lang="en-us">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | multiScenedemo</title>
-    <link rel="shortcut icon" href="https://2021-01-iti415.github.io/02-04-module1_projects-OrangeWiz/BuildNew/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="ApplePicker%20Website_files/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" style="width: 960px; height: 600px; cursor: default;" width="960" height="600"></canvas>
-      <div id="unity-loading-bar" style="display: none;">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full" style="width: 100%;"></div>
+          <div id="unity-progress-bar-full"></div>
         </div>
       </div>
       <div id="unity-footer">
@@ -22,7 +23,7 @@
       </div>
     </div>
     <script>
-      var buildUrl = "Build";
+      var buildUrl = "BuildNew/Build";
       var loaderUrl = buildUrl + "/BuildNew.loader.js";
       var config = {
         dataUrl: buildUrl + "/BuildNew.data",
@@ -64,7 +65,6 @@
         });
       };
       document.body.appendChild(script);
-    </script><script src="ApplePicker%20Website_files/BuildNew.js"></script>
-  
-
-<script src="ApplePicker%20Website_files/BuildNew_002.js"></script></body></html>
+    </script>
+  </body>
+</html>
