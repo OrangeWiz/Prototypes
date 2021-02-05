@@ -236,7 +236,7 @@ MonoBehaviour:
   speed: 350
   leftAndRight: 25
   changetoChangeDirection: 0.3
-  secondsBetweenAppleDrop: 0.1
+  secondsBetweenAppleDrop: 0.3
 --- !u!1 &1102968893
 GameObject:
   m_ObjectHideFlags: 0
