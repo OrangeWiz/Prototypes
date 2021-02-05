@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Unity WebGL Player | multiScenedemo</title>
+    <link rel="shortcut icon" href="https://2021-01-iti415.github.io/02-04-module1_projects-OrangeWiz/BuildNew/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="ApplePicker%20Website_files/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" style="width: 960px; height: 600px; cursor: default;" width="960" height="600"></canvas>
+      <div id="unity-loading-bar" style="display: none;">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
+        </div>
+      </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">multiScenedemo</div>
+      </div>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/BuildNew.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/BuildNew.data",
+        frameworkUrl: buildUrl + "/BuildNew.framework.js",
+        codeUrl: buildUrl + "/BuildNew.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "multiScenedemo",
+        productVersion: "0.1",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script><script src="ApplePicker%20Website_files/BuildNew.js"></script>
+  
+
+<script src="ApplePicker%20Website_files/BuildNew_002.js"></script></body></html>
